@@ -37,6 +37,7 @@ class QuizBrain {
   }
 
   String getQuestion() {
+    print(_index);
     return _questions[_index].questionText;
   }
 
@@ -44,7 +45,15 @@ class QuizBrain {
     return _questions[_index].questionAnswer;
   }
 
-  bool over(index) {
-    return index >= _questions.length ? true : false;
+  bool isFinished() {
+    return _index >= _questions.length - 1 ? true : false;
+  }
+
+  void reset() {
+    _index = 0;
+  }
+
+  int getCount() {
+    return _questions.length;
   }
 }

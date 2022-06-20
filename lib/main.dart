@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'quizbrain.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 QuizBrain quizBrain = QuizBrain();
-
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -30,9 +30,34 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   List<Widget> scoreKeeper = [];
-
+  int correct = 0;
+  int total = quizBrain.getCount();
   Widget getScore(bool ans) {
+    if (quizBrain.isFinished() == true) {
+      Alert(
+        context: context,
+        title: 'Finished!',
+        desc:
+            'You\'ve reached the end of the quiz. You got $correct / $total correct.',
+        buttons: [
+          DialogButton(
+            color: Colors.grey[900],
+            child: Text(
+              "RESTART",
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            onPressed: () => Navigator.pop(context),
+            width: 120,
+          )
+        ],
+      ).show();
+
+      quizBrain.reset();
+      correct = 0;
+      scoreKeeper = [];
+    }
     if (ans == quizBrain.getAnswer()) {
+      correct++;
       return Icon(
         Icons.check,
         color: Colors.green,

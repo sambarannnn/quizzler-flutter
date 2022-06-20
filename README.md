@@ -2,7 +2,7 @@
 
 ## Screenshots
 
-Quiz Screen            |  Android
+Quiz Screen            |  Score Screen
 :-------------------------:|:-------------------------:
 <img width=300/ src = "https://github.com/sambarannnn/quizzler-flutter/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202022-06-20%20at%2021.49.22.png">  |  <img width=300/ src = "https://github.com/sambarannnn/quizzler-flutter/blob/master/images/Simulator%20Screen%20Shot%20-%20iPhone%2012%20Pro%20-%202022-06-20%20at%2021.49.11.png">
 
